@@ -1,16 +1,20 @@
 # deeplink_demo
 
-A new Flutter project.
+This repo demonstrates unexpected behavior when using a deeplink to launch an app.
 
-## Getting Started
+In this example, this is the deeplink being used:
+demoapp://dl.demo.app/passwordless?token=abc123&targetRoute=demoapp%3A%2F%2Fdl.demo.app%2Fpasswordless&shortCode=F8ZCGU&userId=12345679
 
-This project is a starting point for a Flutter application.
+To trigger this deeplink use the following ADB command (note the extra slashes in URL):
 
-A few resources to get you started if this is your first Flutter project:
+`adb shell am start -a android.intent.action.VIEW -d "demoapp://dl.demo.app/passwordless?token=abc123\&targetRoute=demoapp%3A%2F%2Fdl.demo.app%2Fpasswordless\&shortCode=F8ZCGU\&userId=12345679"`
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## App is Already Running when Link Is Activated
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Everything works as expected. You will arrive on a target page showing the query parameter values
+
+## App is NOT Running when Link Is Activated
+
+Multiple routes are called in rapid success.
+
+In this example, You will land on the successful route parsing page, but if you click the back arrow you can see that there were THREE routes that were navigated to before the final route. 
