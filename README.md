@@ -20,3 +20,7 @@ Everything works as expected. You will arrive on a target page showing the query
 Multiple routes are called in rapid success.
 
 In this example, You will land on the successful route parsing page, but if you click the back arrow you can see that there were THREE routes that were navigated to before the final route. 
+
+If you omit the targetRoute parameter, the behavior is same as if app is running. To see, launch app with this command:
+
+`adb shell am start -a android.intent.action.VIEW -d "demoapp://dl.demo.app/passwordless?token=abc123\&shortCode=F8ZCGU\&userId=12345679"`
