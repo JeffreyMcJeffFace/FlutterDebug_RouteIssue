@@ -7,7 +7,7 @@ https://github.com/flutter/flutter/issues/93295
 In this example, this is the deeplink being used:
 demoapp://dl.demo.app/passwordless?token=abc123&targetRoute=demoapp%3A%2F%2Fdl.demo.app%2Fpasswordless&shortCode=F8ZCGU&userId=12345679
 
-To trigger this deeplink use the following ADB command (note the extra slashes in URL):
+To trigger this deeplink use the following ADB command (note the extra slashes in URL to call properly with ADB):
 
 `adb shell am start -a android.intent.action.VIEW -d "demoapp://dl.demo.app/passwordless?token=abc123\&targetRoute=demoapp%3A%2F%2Fdl.demo.app%2Fpasswordless\&shortCode=F8ZCGU\&userId=12345679"`
 
