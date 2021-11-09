@@ -1,6 +1,8 @@
 # deeplink_demo
 
-This repo demonstrates unexpected behavior when using a deeplink to launch an app.
+This repo demonstrates unexpected behavior when using a deeplink to launch an app and there is a query parameter in link with a URL format.
+
+https://github.com/flutter/flutter/issues/93295
 
 In this example, this is the deeplink being used:
 demoapp://dl.demo.app/passwordless?token=abc123&targetRoute=demoapp%3A%2F%2Fdl.demo.app%2Fpasswordless&shortCode=F8ZCGU&userId=12345679
