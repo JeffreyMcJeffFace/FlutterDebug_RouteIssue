@@ -9,6 +9,7 @@ class The404Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("Route Not Found")),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

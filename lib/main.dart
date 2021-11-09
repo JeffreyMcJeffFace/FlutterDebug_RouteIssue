@@ -1,7 +1,5 @@
-import 'package:deeplink_demo/cubit/debug_cubit.dart';
 import 'package:deeplink_demo/router.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,16 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => DebugCubit(),
-      child: MaterialApp(
-        title: 'Flutter Debug Issue',
-        onGenerateRoute: (settings) => Routes.onGenerateRoute(settings),
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const MyHomePage(title: 'Debug Query Param Route Issue'),
+    return MaterialApp(
+      title: 'Flutter Debug Issue',
+      onGenerateRoute: (settings) => Routes.onGenerateRoute(settings),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: const MyHomePage(title: 'Debug Query Param Route Issue'),
     );
   }
 }

@@ -1,7 +1,5 @@
-import 'package:deeplink_demo/cubit/debug_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ParsedParamsPage extends StatelessWidget {
   const ParsedParamsPage({Key? key, @required this.queryParams}) : super(key: key);
@@ -17,6 +15,9 @@ class ParsedParamsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Successful Route Parsing Page"),
+      ),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -25,12 +26,6 @@ class ParsedParamsPage extends StatelessWidget {
           Row(
             children: [Expanded(child: Column(children: listParams()))],
           ),
-          Row(
-            children: [
-              Expanded(
-                  child: Column(children: context.read<DebugCubit>().state.routeHistory.map((e) => Text(e)).toList()))
-            ],
-          )
         ],
       )),
     );
